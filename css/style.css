@@ -399,7 +399,7 @@
 
 .History_wrap .top_dots {
     position: absolute;
-    top: -30px;
+    top: -60px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -456,30 +456,31 @@
     position: absolute;
     top: -90px;
     right: 15px;
-    padding: 15px;
     font-size: 0;
+    width: 60px;
+    height: 60px;
     border: 1px solid #999;
     background: #fff;
+    cursor: pointer;
 }
 
 .History_wrap .History_slide .slick-prev {
-    right: 65px;
+    right: 74px;
+}
+
+.History_wrap .History_slide .slick-prev::after,
+.History_wrap .History_slide .slick-next::after{
+    font-family: xeicon;
+    font-size: 30px;
+    z-index: 999;
 }
 
 .History_wrap .History_slide .slick-prev::after {
     content: "\e93d";
-    font-family: xeicon;
-    font-size: 20px;
-    z-index: 999;
 }
-
-.History_wrap .History_slide .slick-next {}
 
 .History_wrap .History_slide .slick-next::after {
     content: "\e940";
-    font-family: xeicon;
-    font-size: 20px;
-    z-index: 999;
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡ네번째섹션ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
@@ -608,7 +609,6 @@
 }
 
 .news_wrap .left_tap .tab_con .art_box p {
-
     font-size: 14px;
     color: #333;
 
@@ -621,11 +621,9 @@
     -webkit-box-orient: vertical;
 }
 
+
 .news_wrap .left_tap .tab_con ol {
     padding: 20px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -635,15 +633,18 @@
 
 .news_wrap .left_tap .tab_con ol li {
     border-bottom: 1px solid #ddd;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 200px;
+   
+    width: 100%;
     margin-bottom: 5px;
 }
 
 .news_wrap .left_tap .tab_con ol li a {
     position: relative;
+    display: inline-block;
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .news_wrap .left_tap .tab_con ol li a::before {
@@ -806,19 +807,111 @@
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡ푸터ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 .footer {
+    position: relative;
     background: #1c2b37;
     color: #fff;
-
 }
 
-.footer .footer_util {
+.footer_util .top_util,
+.footer_util .mid_util,
+.footer_util .bot_util {
+    display: flex;
+    gap: 30px;
+    margin: 0 0 24px 0;
+    justify-content: center;
+}
+
+.footer .footer_util .top_util li{
+    position: relative;
+    width: 370px;
+    height: 50px;
+    border: 1px solid #666;
+
+    transition: 0.5s;
+}
+
+.footer .footer_util .top_util li:hover{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.footer .footer_util .top_util li a {
+    color: #ddd;
+    margin: 0 15px;     
+    line-height: 50px;
+}
+
+.footer .footer_util .top_util li a::after{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    content: "";
     display: block;
-    margin: 0 auto;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    transform-origin: center; 
+    transform: rotate(45deg) scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer .footer_util .top_util li:hover a::after{
+    right: 30px;
+    transform: rotate(45deg) scale(0);
+    transition: 0.3s ease-in-out;
+}
+
+
+.footer .footer_util .top_util li a::before{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #616b73;
+    border-right: 1px solid #616b73;
+    transform: rotate(45deg);
+}
+
+.footer_util .mid_util li {
+    position: relative;
+    display: inline-block;
+}
+
+.footer_util .mid_util li~li::after{
+    position: absolute;
+    top: 5px;
+    left: -15px;
+
+    content: "";
+    width: 1px;
+    height: 8px;
+    background: #666;
+}
+
+.footer_util .mid_util .desc::before{
+    content: "\e9f3";
+    font-family: xeicon;
+}
+
+.footer_util .mid_util li a,
+.footer_util .bot_util li a,
+.footer p{
+    color: #ddd;
+    font-size: 14px;
+}
+
+.footer p{
     text-align: center;
 }
 
-.footer .footer_util ul {
-    display: flex;
-    gap: 30px;
-
+.footer a img{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+    opacity: 0.8;
 }
