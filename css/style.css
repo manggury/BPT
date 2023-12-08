@@ -219,6 +219,7 @@
     outline: none;
     color: #0156c1;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .header_wrap .util .popup_btn button {
@@ -230,6 +231,7 @@
     text-align: left;
     border: 1px solid #0156c1;
     color: #0156c1;
+    cursor: pointer;
 }
 
 .header_wrap .util .popup_btn.on button {}
@@ -270,6 +272,7 @@
     color: #fff;
     cursor: pointer;
     line-height: 1;
+    cursor: pointer;
 }
 
 .header_wrap .menu_tab button i {
@@ -444,6 +447,7 @@
     font-weight: 600;
     z-index: 1;
     color: #ddd;
+    cursor: pointer;
 }
 
 .visual_slide .slick-prev::after {
@@ -640,6 +644,7 @@
     position: relative;
     margin: 0 15px;
     border: 1px solid #ddd;
+    cursor: pointer;
 }
 
 .History_wrap .History_slide .itm::after {
@@ -868,6 +873,11 @@
     left: auto;
     right: 0;
     width: 100%;
+}
+
+.news_wrap .left_tap .tab_tit .menu_bar {
+    cursor: pointer;
+
 }
 
 .news_wrap .left_tap .tab_tit .menu_bar i {
@@ -1106,6 +1116,7 @@
     font-weight: 600;
     z-index: 999;
     color: #ddd;
+    cursor: pointer;
 }
 
 .right_box .popup_wrap .popup_slide .slick-prev::after {
