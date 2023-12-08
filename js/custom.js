@@ -1,6 +1,10 @@
 $(function () {
 
 
+    $('.menu_tab button').on('click', function () {
+        $('.hidden_menu').toggleClass('on')
+    });
+
     $('.visual_slide').slick({
         arrows: true,
     });

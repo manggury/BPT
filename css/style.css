@@ -77,6 +77,94 @@
     content: "\e940";
 }
 
+.hidden_menu {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 20px 30px;
+
+    width: 800px;
+    height: 500px;
+
+
+    border: 4px solid #0156c1;
+    background: #fff;
+    z-index: 1000;
+
+    transition: 0.5s;
+    opacity: 0;
+
+    overflow-y: scroll;
+}
+
+.hidden_menu::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* 스크롤바 트랙 */
+.hidden_menu::-webkit-scrollbar-track {
+    background-color: rgb(64, 179, 55);
+}
+
+/* 스크롤바 핸들 */
+.hidden_menu::-webkit-scrollbar-thumb {
+    background-color: rgb(247, 130, 13);
+    border-radius: 6px;
+}
+
+/* 마우스 호버시 스크롤바 핸들 */
+.hidden_menu::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(3, 125, 201);
+}
+
+.hidden_menu.on {
+    opacity: 1;
+}
+
+.hidden_menu ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px
+}
+
+.hidden_menu .main_menu>a {
+    display: block;
+    margin: 0 0 16px 0;
+    padding: 0 0 5px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0156c1;
+    border-bottom: 2px solid #0156c1;
+}
+
+.hidden_menu .sub_menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden_menu .sub_menu>li {
+    position: relative;
+}
+
+.hidden_menu .sub_menu>li::after {
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #000;
+}
+
+.hidden_menu .sub_menu li ol {
+    margin: 0 0 0 15px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+
 /* --------팦업------------------------------------------ */
 .header {
     position: sticky;
@@ -183,6 +271,8 @@
     font-size: 36px;
 }
 
+
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡ첫번째섹션ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 .visual_wrap .visual_slide figure {
@@ -278,6 +368,10 @@
     transition: 0.5s;
 
     background: #0156c1;
+}
+
+.visual_wrap .mquick ul li:last-child {
+    background: url(../images/mquick01.jpg);
 }
 
 .visual_wrap .mquick ul li i {
@@ -609,7 +703,7 @@
 
 .History_wrap .History_slide .itm .txt_box .txt {
     display: block;
-    margin: 0 0 20px 24px;
+    margin: 0 24px 20px 24px;
 }
 
 .History_wrap .top_dots {
@@ -1134,15 +1228,13 @@
 /* -------------------------totop--------------------- */
 .totop_btn {
     position: fixed;
-    right: -100px;
+    right: -50px;
     bottom: 478px;
 
     width: 50px;
     height: 50px;
-    border: 1px solid #0156c1;
-
-    color: #000;
-    background: transparent;
+    background: rgb(247, 130, 13);
+    border: none;
     cursor: pointer;
 
     visibility: hidden;
@@ -1151,35 +1243,19 @@
 }
 
 .totop_btn.on {
-    right: 150px;
+    right: 30px;
     visibility: visible;
     opacity: 1;
 }
 
 .totop_btn::before {
-    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 3px;
-    height: 20px;
-    background: #0156c1;
-}
-
-.totop_btn::after {
-    content: "";
-    position: absolute;
-    top: calc(25% - 1px);
-    left: 24px;
-    transform: translate(-50%, 0);
-
-
-    width: 15px;
-    height: 15px;
-    transform-origin: 0 0;
-    transform: rotate(45deg);
-    border-top: 3px solid #0156c1;
-    border-left: 3px solid #0156c1;
+    content: "\e915";
+    font-family: xeicon;
+    font-size: 24px;
+    color: #fff;
 }
