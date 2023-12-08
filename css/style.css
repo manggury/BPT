@@ -95,8 +95,15 @@
 
     transition: 0.5s;
     opacity: 0;
+    visibility: hidden;
 
     overflow-y: scroll;
+}
+
+.hidden_menu.on {
+    opacity: 1;
+    visibility: visible;
+
 }
 
 .hidden_menu::-webkit-scrollbar {
@@ -119,9 +126,7 @@
     background-color: rgb(3, 125, 201);
 }
 
-.hidden_menu.on {
-    opacity: 1;
-}
+
 
 .hidden_menu ul {
     display: grid;
